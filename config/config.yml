@@ -1,0 +1,7 @@
+binance:
+  api_key: "8eyJiap5a0hgNZ0dL9nr2l4xjPmwLS1FohL5ZDnT9Rpy0TfsysMaTexnsiIGTBI3"
+  api_secret: "VyJthJg1a3PhtDZWtrl6ZofOEcI29S33V1LoHGEXpHR02IRCFErM9R8l4uXT0Sk9"
+
+trading:
+  fee: 0.001
+  min_profit_margin: 0.0001
