@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12b307b8-6567-4da0-b878-972ad3d0a4eb" name="Changes" comment="defining exchange addressing info for each crypto starting files">
-      <change afterPath="$PROJECT_DIR$/arbitrage_bot/pair_finder.py" afterDir="false" />
+    <list default="true" id="12b307b8-6567-4da0-b878-972ad3d0a4eb" name="Changes" comment="Making dynamic strategy for more arbitrage opportunity">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arbitrage_bot/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/arbitrage_bot/bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arbitrage_bot/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/arbitrage_bot/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arbitrage_bot/data_fetcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/arbitrage_bot/data_fetcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arbitrage_bot/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/arbitrage_bot/logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arbitrage_bot/order_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/arbitrage_bot/order_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/arbitrage_bot/strategies.py" beforeDir="false" afterPath="$PROJECT_DIR$/arbitrage_bot/strategies.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +148,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1726440837856</updated>
-      <workItem from="1726440841803" duration="4351000" />
+      <workItem from="1726440841803" duration="5209000" />
     </task>
     <task id="LOCAL-00001" summary="Init Code Binance Arbitrage">
       <option name="closed" value="true" />
@@ -177,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726527643131</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Making dynamic strategy for more arbitrage opportunity">
+      <option name="closed" value="true" />
+      <created>1726528107270</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1726528107270</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,11 +212,12 @@
     <MESSAGE value="setup all files" />
     <MESSAGE value="setup project Triangular arbitrage" />
     <MESSAGE value="defining exchange addressing info for each crypto starting files" />
-    <option name="LAST_COMMIT_MESSAGE" value="defining exchange addressing info for each crypto starting files" />
+    <MESSAGE value="Making dynamic strategy for more arbitrage opportunity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Making dynamic strategy for more arbitrage opportunity" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ArbitrageBot$main.coverage" NAME="main Coverage Results" MODIFIED="1726526305504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ArbitrageBot$binancefee.coverage" NAME="binancefee Coverage Results" MODIFIED="1726526336391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ArbitrageBot$data_fetcher.coverage" NAME="data_fetcher Coverage Results" MODIFIED="1726527498516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/arbitrage_bot" />
+    <SUITE FILE_PATH="coverage/ArbitrageBot$data_fetcher.coverage" NAME="data_fetcher Coverage Results" MODIFIED="1726528247283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/arbitrage_bot" />
   </component>
 </project>

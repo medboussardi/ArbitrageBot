@@ -1,3 +1,5 @@
+from arbitrage_bot.pair_finder import PairFinder
+from arbitrage_bot.strategies import TriangularArbitrage
 import ccxt.pro as ccxtpro
 import asyncio
 import logging
@@ -15,61 +17,60 @@ class DataFetcher:
         logging.basicConfig(level=logging.INFO)
         self.logger = logging.getLogger(__name__)
 
-    async def fetch_real_time_prices(self, symbols):
+        # Initialize strategy and pair finder
+        self.arbitrage_strategy = None
+        self.pair_finder = None
+
+    async def fetch_symbols_and_pairs(self):
         """
-        Fetch real-time prices using WebSocket for multiple symbols.
+        Fetch available trading pairs dynamically and identify triangular arbitrage opportunities.
+        """
+        self.logger.info("Fetching available symbols...")
+        symbols = await self.exchange.load_markets()
+        symbols = list(symbols.keys())  # Extract symbol names
+
+        # Find triangular pairs
+        self.pair_finder = PairFinder(symbols)
+        triangular_pairs = self.pair_finder.find_triangular_pairs()
+
+        self.logger.info(f"Identified {len(triangular_pairs)} triangular pairs.")
+        return triangular_pairs
+
+    async def fetch_real_time_prices(self, triangular_pairs):
+        """
+        Fetch real-time prices using WebSocket for triangular pairs.
         Automatically reconnects if the connection is lost.
         """
         while True:
             try:
                 market_data = {}
-                for symbol in symbols:
+                # Fetch price data for all symbols in triangular pairs
+                symbols_to_watch = set([pair for triplet in triangular_pairs for pair in triplet])
+
+                for symbol in symbols_to_watch:
                     ticker = await self.exchange.watch_ticker(symbol)
                     market_data[symbol] = ticker['last']
                     self.logger.info(f"Real-time price for {symbol}: {ticker['last']}")
-                return market_data
+
+                # Pass data to the arbitrage strategy
+                self.arbitrage_strategy.find_arbitrage_opportunities(triangular_pairs, market_data)
+
+                await asyncio.sleep(1)  # Short delay to prevent overload
             except Exception as e:
                 self.logger.error(f"Error fetching real-time prices: {e}")
                 await asyncio.sleep(5)  # Wait 5 seconds before retrying
 
-    async def fetch_real_time_order_books(self, symbols, limit=10):
+    async def run_websocket_tasks(self):
         """
-        Fetch real-time order book using WebSocket for multiple symbols.
-        Automatically reconnects if the connection is lost.
+        Run WebSocket tasks concurrently to fetch real-time prices for all triangular pairs.
         """
-        while True:
-            try:
-                order_books = {}
-                for symbol in symbols:
-                    order_book = await self.exchange.watch_order_book(symbol, limit)
-                    order_books[symbol] = order_book
-                    self.logger.info(f"Real-time order book for {symbol}: {order_book}")
-                return order_books
-            except Exception as e:
-                self.logger.error(f"Error fetching real-time order books: {e}")
-                await asyncio.sleep(5)  # Wait 5 seconds before retrying
+        triangular_pairs = await self.fetch_symbols_and_pairs()
 
-    async def fetch_account_balance(self):
-        """
-        Fetch real-time account balance using WebSocket.
-        Automatically reconnects if the connection is lost.
-        """
-        while True:
-            try:
-                balance = await self.exchange.watch_balance()
-                self.logger.info(f"Real-time account balance: {balance}")
-                return balance
-            except Exception as e:
-                self.logger.error(f"Error fetching real-time balance: {e}")
-                await asyncio.sleep(5)  # Wait 5 seconds before retrying
+        # Initialize strategy with triangular pairs
+        self.arbitrage_strategy = TriangularArbitrage(self)
 
-    async def run_websocket_tasks(self, symbols):
-        """
-        Run WebSocket tasks concurrently to fetch real-time prices and order books.
-        """
         await asyncio.gather(
-            self.fetch_real_time_prices(symbols),
-            self.fetch_real_time_order_books(symbols)
+            self.fetch_real_time_prices(triangular_pairs)
         )
 
 
@@ -78,8 +79,7 @@ if __name__ == "__main__":
     api_secret = "VyJthJg1a3PhtDZWtrl6ZofOEcI29S33V1LoHGEXpHR02IRCFErM9R8l4uXT0Sk9"
 
     data_fetcher = DataFetcher(api_key, api_secret)
-    symbols = ['BTC/USDT', 'ETH/USDT', 'ETH/BTC']
 
-    # Run WebSocket tasks concurrently
+    # Run WebSocket tasks
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(data_fetcher.run_websocket_tasks(symbols))
+    loop.run_until_complete(data_fetcher.run_websocket_tasks())
