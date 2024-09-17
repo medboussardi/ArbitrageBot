@@ -1,7 +1,7 @@
 import yaml
 
 
-def load_config(config_file="config/config.yml"):
+def load_config(config_file="/Users/simo/PycharmProjects/ArbitrageBot/arbitrage_bot/config.yml"):
     """
     Load the configuration file.
     """

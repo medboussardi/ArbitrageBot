@@ -4,14 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12b307b8-6567-4da0-b878-972ad3d0a4eb" name="Changes" comment="hidden">
+    <list default="true" id="12b307b8-6567-4da0-b878-972ad3d0a4eb" name="Changes" comment="last script before testing">
+      <change afterPath="$PROJECT_DIR$/arbitrage_bot/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arbitrage_bot/strategies.py" beforeDir="false" afterPath="$PROJECT_DIR$/arbitrage_bot/strategies.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arbitrage_bot/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/arbitrage_bot/bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arbitrage_bot/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/arbitrage_bot/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arbitrage_bot/data_fetcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/arbitrage_bot/data_fetcher.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -37,10 +45,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.binancefee.executor": "Run",
+    "Python.bot.executor": "Run",
     "Python.data_fetcher.executor": "Run",
-    "Python.main.executor": "Run",
+    "Python.main.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/simo/PycharmProjects/ArbitrageBot/arbitrage_bot",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -49,7 +59,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.data_fetcher">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/arbitrage_bot" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.bot">
     <configuration name="binancefee" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ArbitrageBot" />
       <option name="ENV_FILES" value="" />
@@ -65,6 +80,29 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/binancefee.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ArbitrageBot" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/arbitrage_bot" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/arbitrage_bot/bot.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -121,6 +159,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.bot" />
         <item itemvalue="Python.data_fetcher" />
         <item itemvalue="Python.binancefee" />
       </list>
@@ -142,7 +181,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1726440837856</updated>
-      <workItem from="1726440841803" duration="5871000" />
+      <workItem from="1726440841803" duration="10023000" />
     </task>
     <task id="LOCAL-00001" summary="Init Code Binance Arbitrage">
       <option name="closed" value="true" />
@@ -208,7 +247,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726528979871</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="last script before testing">
+      <option name="closed" value="true" />
+      <created>1726529539193</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1726529539194</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,10 +281,12 @@
     <MESSAGE value="Ignor this file" />
     <MESSAGE value="setting up our bot" />
     <MESSAGE value="hidden" />
-    <option name="LAST_COMMIT_MESSAGE" value="hidden" />
+    <MESSAGE value="last script before testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="last script before testing" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ArbitrageBot$main.coverage" NAME="main Coverage Results" MODIFIED="1726526305504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ArbitrageBot$bot.coverage" NAME="bot Coverage Results" MODIFIED="1726531727685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/arbitrage_bot" />
+    <SUITE FILE_PATH="coverage/ArbitrageBot$main.coverage" NAME="main Coverage Results" MODIFIED="1726531679465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ArbitrageBot$binancefee.coverage" NAME="binancefee Coverage Results" MODIFIED="1726526336391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ArbitrageBot$data_fetcher.coverage" NAME="data_fetcher Coverage Results" MODIFIED="1726528247283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/arbitrage_bot" />
   </component>

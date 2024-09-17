@@ -1,5 +1,5 @@
-from arbitrage_bot.pair_finder import PairFinder
-from arbitrage_bot.strategies import TriangularArbitrage
+from .pair_finder import PairFinder
+from .strategies import TriangularArbitrage
 import ccxt.pro as ccxtpro
 import asyncio
 import logging

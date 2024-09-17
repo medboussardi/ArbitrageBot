@@ -1,4 +1,4 @@
-from arbitrage_bot.data_fetcher import DataFetcher
+from .data_fetcher import DataFetcher
 import asyncio
 
 
